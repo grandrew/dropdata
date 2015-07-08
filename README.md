@@ -19,7 +19,7 @@ method used in case of data collision:
 add to crontab with this syntax: `* * * * * /path/to/drop_data.sh <DatabinID/name> --send`
 
 # Config file
-It is possible to use small config file at `/etc/drop_data.cfg` which contains name of the bin in the form:
+It is possible to use small config file at `/etc/drop_data.conf` which contains name of the bin in the form:
 ```
 Name_Of_Bin 5g45h5f~
 Other_bin 5dhsjll
