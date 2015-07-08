@@ -48,7 +48,7 @@ fi
 
 
 DDURL="https://datadrop.wolframcloud.com/api/v1.0/Add?bin=$BID"
-if ! [ -f $DROPDIR/$BID ]; then
+if ! [ -d $DROPDIR/$BID ]; then
     echo "No data!"
     exit 1
 fi
