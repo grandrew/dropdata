@@ -25,3 +25,8 @@ Name_Of_Bin 5g45h5f~
 Other_bin 5dhsjll
 ```
 so that name form instead of hash can be used as input
+
+# Requirements
+
+  - shell interpreter (busybox,ash,bash,dash)
+  - wget (either SSL or noSSL version)
