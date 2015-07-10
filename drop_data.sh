@@ -85,5 +85,5 @@ done
 
 echo "Dropping data with $DDURL"
 #wget $DDURL -q -O /dev/null
-rm -rf $DROPDIR
+rm -rf $DROPDIR/$BID
 wget -T 10 -t 5 $DDURL -q -O -
