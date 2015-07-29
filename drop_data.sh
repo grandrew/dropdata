@@ -46,6 +46,11 @@ if [ $2 != "--send" ]; then
     exit
 fi
 
+if wget --help | grep -q secure; then
+    DDURL="https://datadrop.wolframcloud.com/api/v1.0/Add?bin=$BID"
+else
+    DDURL="http://datadrop.wolframcloud.com/api/v1.0/Add?bin=$BID"
+fi
 
 if ! [ -d $DROPDIR/$BID ]; then
     echo "No data!"
@@ -83,13 +88,5 @@ for key in `ls -1 $DROPDIR/$BID/`; do
 done
 
 echo "Dropping data with $DDURL"
-#wget $DDURL -q -O /dev/null
 rm -rf $DROPDIR/$BID
-if wget --help | grep -q secure; then
-    DDURL="https://datadrop.wolframcloud.com/api/v1.0/Add?bin=$BID"
-else
-    DDURL="http://datadrop.wolframcloud.com/api/v1.0/Add?bin=$BID"
-fi
-
-wget -T 10 -t 5 $DDURL -q -O -
-
+wget -T 30 -t 5 $DDURL -q -O -
